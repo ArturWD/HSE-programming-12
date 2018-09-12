@@ -28,7 +28,7 @@ namespace Lab_12
         // создание уникального объекта
         private static Bird GetValue(int key)
         {
-            return new Bird("Bird_№_"+key.ToString(), key+11, key+1000);
+            return new Bird("Bird_№_"+key.ToString(), key+10, key+10);
         }
         public Dictionary<string, Bird> Collection_2_2
         {
