@@ -34,7 +34,7 @@ namespace Lab_12
                 bool mc = collections.Collection_1_1.Contains(middle);
                 bool nc = collections.Collection_1_1.Contains(animal);
                 sw.Stop();
-                Console.WriteLine("Время коллекции 1-1: " + (sw.ElapsedMilliseconds).ToString() + "  мсек");
+                Console.WriteLine("Время коллекции 1-1: " + (sw.ElapsedTicks).ToString() + "  тиков");
             }
             {
                 // Время 2
@@ -48,7 +48,7 @@ namespace Lab_12
                 bool nc = collections.Collection_1_2.Contains(animal.ToString());
 
                 sw.Stop();
-                Console.WriteLine("Время коллекции 1-2: " + (sw.ElapsedMilliseconds).ToString() + "  мсек");
+                Console.WriteLine("Время коллекции 1-2: " + (sw.ElapsedTicks).ToString() + "  тиков");
             }
 
             {
@@ -62,7 +62,7 @@ namespace Lab_12
                 bool mc = collections.Collection_2_1.ContainsKey(middle);
                 bool nc = collections.Collection_2_1.ContainsKey(animal);
                 sw.Stop();
-                Console.Write("Время коллекции 2-1 по ключу: " + (sw.ElapsedMilliseconds).ToString() + "  мсек");
+                Console.Write("Время коллекции 2-1 по ключу: " + (sw.ElapsedTicks).ToString() + "  тиков");
             }
 
             

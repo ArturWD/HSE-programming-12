@@ -8,11 +8,9 @@ namespace Lab_12
         // задаём значения по умолчанию для обработки исключений 
         protected string name="DefaultName";
         protected double weight=0;
-
-        //конструктор без параметров
         public Animal()
         {
-            name = "Enigmatic4D";
+
         }
         //конструктор с параметрами
         public Animal(string name, double weight)
@@ -66,7 +64,15 @@ namespace Lab_12
             if (this.name == an1.Name && this.weight == an1.Weight) return true;
             return false;
         }
+        public override bool Equals(Object obj)
+        {
+            return Equals((Animal)obj);
+        }
 
+        public override int GetHashCode()
+        {
+            return this.Weight.GetHashCode() ^ this.Name.GetHashCode();
+        }
         public virtual object Clone()
         {
             return new Animal(this.name, this.weight);
