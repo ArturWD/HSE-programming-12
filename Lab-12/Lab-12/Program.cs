@@ -154,8 +154,13 @@ namespace Lab_12
                 int searchN = (int)sw.ElapsedTicks;
 
                 Console.WriteLine("Dictionary<Animal,Bird> - Value        " + searchF + "      " + searchL + "          " + searchM + "         " + searchN);
-            }          
+            }
 
+
+            Console.WriteLine();
+            Console.WriteLine("Добавим элемент в коллекции и удалим его из них.");
+            collections.Add(bird);
+            collections.Remove(bird);
             Console.ReadKey();
         }
     }

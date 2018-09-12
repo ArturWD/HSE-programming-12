@@ -43,7 +43,6 @@ namespace Lab_12
             return new Bird(this.name, this.weight, this.flightDistance);
         }
 
-        // 12 ЛАБОРАТОРНАЯ Ссылка на объект базового классf
  
         public Animal BaseAnimal
         {
@@ -52,7 +51,6 @@ namespace Lab_12
 
         public bool Equals(Bird an1)
         {
-            // они будут равны, только если все 3 поля совпадают
             if (name == an1.Name && weight == an1.Weight && flightDistance == an1.flightDistance) return true;
             return false;
         }

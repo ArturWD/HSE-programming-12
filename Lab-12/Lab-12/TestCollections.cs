@@ -54,5 +54,19 @@ namespace Lab_12
             set { collection_1_1 = value; }
         }
 
+        public void Add(Bird bird)
+        {
+            collection_1_1.Add(bird.BaseAnimal);
+            collection_1_2.Add((bird.BaseAnimal).ToString());
+            collection_2_1.Add(bird.BaseAnimal, bird);
+            collection_2_2.Add((bird.BaseAnimal).ToString(), bird);
+        }
+        public void Remove(Bird bird)
+        {
+            collection_1_1.Remove(bird.BaseAnimal);
+            collection_1_2.Remove((bird.BaseAnimal).ToString());
+            collection_2_1.Remove(bird.BaseAnimal);
+            collection_2_2.Remove((bird.BaseAnimal).ToString());
+        }
     }
 }
