@@ -13,9 +13,10 @@ namespace Lab_12
 
         public TestCollections(int count)
         {
+            if (count < 3) throw new RangeArrayException("Слишком мало элементов в массиве!");
             for (int i = 0; i < count; i++)
             {
-                var value = GetValue(i);
+                Bird value = GetValue(i);
                 // получаем родителя через свойство дочернего класса
                 var key = value.BaseAnimal;
                 Collection_1_1.Add( key);

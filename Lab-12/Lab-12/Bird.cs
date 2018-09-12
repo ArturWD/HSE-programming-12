@@ -3,7 +3,7 @@
 namespace Lab_12
 {
     // Это производный класс - Птица. Птица - производный класса от животного.
-    class Bird:Animal, ICloneable
+    class Bird:Animal, ICloneable, IEquatable<Bird>
     {
         // задаём значения по умолчанию для обработки исключений 
         protected int flightDistance = 0;
@@ -38,9 +38,9 @@ namespace Lab_12
 
 
         // реализуем метод интерфейса ICloneable
-        public object Clone()
+        public override object Clone()
         {
-            return new Bird("Clone-"+this.name, this.weight, this.flightDistance);
+            return new Bird(this.name, this.weight, this.flightDistance);
         }
 
         // 12 ЛАБОРАТОРНАЯ Ссылка на объект базового классf
@@ -48,6 +48,13 @@ namespace Lab_12
         public Animal BaseAnimal
         {
             get { return new Animal(name, weight); }
+        }
+
+        public bool Equals(Bird an1)
+        {
+            // они будут равны, только если все 3 поля совпадают
+            if (name == an1.Name && weight == an1.Weight && flightDistance == an1.flightDistance) return true;
+            return false;
         }
 
     }

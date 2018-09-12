@@ -60,13 +60,16 @@ namespace Lab_12
             return 0;
         }
 
-        // реализуем интерфейс IEquitable использования поиска элементов в масиве
+        // реализуем интерфейс IEquitable использования поиска элементов
         public bool Equals(Animal an1)
         {
-            // они будут равны, только если все 3 поля совпадают
-            if (name == an1.Name && weight == an1.Weight) return true;
+            if (this.name == an1.Name && this.weight == an1.Weight) return true;
             return false;
         }
 
+        public virtual object Clone()
+        {
+            return new Animal(this.name, this.weight);
+        }
     }
 }
