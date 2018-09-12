@@ -9,7 +9,17 @@ namespace Lab_12
             Console.WriteLine("");
             //Создадим коллекции
             Console.WriteLine("Количество элементов");
-            int count = Convert.ToInt32(Console.ReadLine());
+            int count;
+            try
+            {
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Ошибка ввода. 7 элементов.");
+                count = 7;             
+            }
+            
             var collections = new TestCollections( count );
             // Создадим несуществующие оюъекты для тестов
             var bird = new Bird("Co-Co", 2, 34);
@@ -23,9 +33,12 @@ namespace Lab_12
             string firstString = collections.Collection_1_2[0];
             string lastString = collections.Collection_1_2[collections.Collection_1_2.Count - 1];
             string middleString = collections.Collection_1_2[collections.Collection_1_2.Count / 2];
+
             Console.WriteLine("Тип коллекции                         Первый    Последний    Средний    Несуществующий");
+
+
+            // Время 1
             {
-                // Время 1
                 Stopwatch sw = new Stopwatch();
                 sw.Restart();                
                 bool fc = collections.Collection_1_1.Contains(first);
@@ -49,8 +62,8 @@ namespace Lab_12
 
                 Console.WriteLine("List<Animal>                           "+searchF+"       "+searchL+"         "+searchM+"       "+searchN);
             }
+            // Время 2
             {
-                // Время 2
                 Stopwatch sw = new Stopwatch();
                 sw.Restart();
                 bool fc = collections.Collection_1_2.Contains(firstString);
@@ -74,9 +87,8 @@ namespace Lab_12
 
                 Console.WriteLine("List<string>                           " + searchF + "        " + searchL + "         " + searchM + "       " + searchN);
             }
-
+            // Время 3
             {
-                // Время 3
                 Stopwatch sw = new Stopwatch();
                 sw.Restart();
                 bool fc = collections.Collection_2_1.ContainsKey(first);
@@ -100,8 +112,8 @@ namespace Lab_12
 
                 Console.WriteLine("Dictionary<Animal,Bird> - Key          " + searchF + "         " + searchL + "            " + searchM + "          " + searchN);
             }
+            // Время 4
             {
-                // Время 4
                 Stopwatch sw = new Stopwatch();
                 sw.Restart();
                 bool fc = collections.Collection_2_2.ContainsKey(firstString);
@@ -125,8 +137,8 @@ namespace Lab_12
 
                 Console.WriteLine("Dictionary<string,Bird> - Key          " + searchF + "        " + searchL + "            " + searchM + "          " + searchN);
             }
+            // Время 5
             {
-                // Время 5
                 //искомые элементы
                 // Известно, что вес равен дальности полёта
                 Bird firstB = new Bird(first.Name, first.Weight, (int)first.Weight);
