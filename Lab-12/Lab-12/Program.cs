@@ -34,7 +34,7 @@ namespace Lab_12
             string lastString = collections.Collection_1_2[collections.Collection_1_2.Count - 1];
             string middleString = collections.Collection_1_2[collections.Collection_1_2.Count / 2];
 
-            Console.WriteLine("Тип коллекции                         Первый    Последний    Средний    Несуществующий");
+            Console.WriteLine("Тип коллекции                         Первый        Последний        Средний        Несуществующий");
 
 
             // Время 1
@@ -60,7 +60,7 @@ namespace Lab_12
                 sw.Stop();
                 int searchN = (int)sw.ElapsedTicks;
 
-                Console.WriteLine("List<Animal>                           "+searchF+"       "+searchL+"         "+searchM+"       "+searchN);
+                Console.WriteLine("List<Animal>                           "+searchF+" "+fc+"       "+searchL + " " + lc + "         "+searchM + " " + mc + "       "+searchN + " " + nc);
             }
             // Время 2
             {
@@ -85,7 +85,7 @@ namespace Lab_12
                 sw.Stop();
                 int searchN = (int)sw.ElapsedTicks;
 
-                Console.WriteLine("List<string>                           " + searchF + "        " + searchL + "         " + searchM + "       " + searchN);
+                Console.WriteLine("List<string>                          " + searchF + " " + fc + "       " + searchL + " " + lc + "         " + searchM + " " + mc + "       " + searchN + " " + nc);
             }
             // Время 3
             {
@@ -110,7 +110,7 @@ namespace Lab_12
                 sw.Stop();
                 int searchN = (int)sw.ElapsedTicks;
 
-                Console.WriteLine("Dictionary<Animal,Bird> - Key          " + searchF + "         " + searchL + "            " + searchM + "          " + searchN);
+                Console.WriteLine("Dictionary<Animal,Bird> - Key          " + searchF + " " + fc + "       " + searchL + " " + lc + "         " + searchM + " " + mc + "       " + searchN + " " + nc);
             }
             // Время 4
             {
@@ -135,7 +135,7 @@ namespace Lab_12
                 sw.Stop();
                 int searchN = (int)sw.ElapsedTicks;
 
-                Console.WriteLine("Dictionary<string,Bird> - Key          " + searchF + "        " + searchL + "            " + searchM + "          " + searchN);
+                Console.WriteLine("Dictionary<string,Bird> - Key          " + searchF + " " + fc + "       " + searchL + " " + lc + "         " + searchM + " " + mc + "       " + searchN + " " + nc);
             }
             // Время 5
             {
@@ -165,7 +165,7 @@ namespace Lab_12
                 sw.Stop();
                 int searchN = (int)sw.ElapsedTicks;
 
-                Console.WriteLine("Dictionary<Animal,Bird> - Value        " + searchF + "      " + searchL + "          " + searchM + "         " + searchN);
+                Console.WriteLine("Dictionary<Animal,Bird> - Value        " + searchF + " " + fc + "       " + searchL + " " + lc + "         " + searchM + " " + mc + "       " + searchN + " " + nc);
             }
 
 
